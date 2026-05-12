@@ -62,6 +62,7 @@ nano .env
 ```bash
 python vestige.py -h
 ```
+![VESTIGE Demo](demo.png)
 
 ```bash
 # Email recon

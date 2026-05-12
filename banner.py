@@ -1,0 +1,18 @@
+from rich.console import Console
+from rich.text import Text
+
+console = Console()
+
+def show_banner():
+    banner = """
+██╗   ██╗███████╗███████╗████████╗██╗ ██████╗ ███████╗
+██║   ██║██╔════╝██╔════╝╚══██╔══╝██║██╔════╝ ██╔════╝
+██║   ██║█████╗  ███████╗   ██║   ██║██║  ███╗█████╗  
+╚██╗ ██╔╝██╔══╝  ╚════██║   ██║   ██║██║   ██║██╔══╝  
+ ╚████╔╝ ███████╗███████║   ██║   ██║╚██████╔╝███████╗
+  ╚═══╝  ╚══════╝╚══════╝   ╚═╝   ╚═╝ ╚═════╝ ╚══════╝
+"""
+    console.print(banner, style="bold cyan")
+    console.print("  [bold white]Digital Footprint Discovery Tool[/bold white]")
+    console.print("  [bold green]         by mayhack[/bold green]")
+    console.print("  [bold yellow]   Traces Left Behind...[/bold yellow]\n")

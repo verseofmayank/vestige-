@@ -50,7 +50,7 @@ def ip(ip):
 @cli.command(context_settings=CTX)
 @click.option('--username', '-u', required=True, help='Target username')
 def username(username):
-    """Username recon — search across 13+ platforms"""
+    """Username recon — search across 47+ platforms"""
     console.print(username_recon(username))
 
 @cli.command(context_settings=CTX)

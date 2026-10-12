@@ -74,7 +74,7 @@ python vestige.py domain -d example.com
 # IP recon
 python vestige.py ip -i 8.8.8.8
 
-# Username recon (48+ platforms)
+# Username recon (47+ platforms)
 python vestige.py username -u targetuser
 
 # Phone recon

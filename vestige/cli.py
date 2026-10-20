@@ -16,7 +16,7 @@ from vestige import TOOL_NAME, __version__
 from vestige.core.cache import ResponseCache
 from vestige.core.context import CREDENTIAL_VARS, Context, load_credentials
 from vestige.core.correlator import correlate
-from vestige.core.http_client import HttpClient
+from vestige.core.http_client import DEFAULT_QUOTAS, HttpClient
 from vestige.core.models import Investigation, SourceResult, Status, utcnow
 from vestige.core.redact import redact_text
 from vestige.core.scope import Scope, ScopeError, ValidationError, display_domain, normalize_domain
@@ -82,7 +82,7 @@ class _Run:
         setup_logging(verbose, list(self.creds.values()))
         from vestige.modules.dns import DnspythonResolver, OfflineResolver
         cache = ResponseCache(enabled=not no_cache and not offline)
-        http = HttpClient(timeout=timeout, cache=cache, offline=offline, secrets=self.creds.values())
+        http = HttpClient(timeout=timeout, cache=cache, offline=offline, secrets=self.creds.values(), quotas=dict(DEFAULT_QUOTAS))
         resolver = OfflineResolver() if offline else DnspythonResolver(timeout=min(timeout, 8))
         self.inv = Investigation(command=command, target=target, mode="live")
         self.inv.scope = scope.to_dict() if scope else {"mode": "passive"}
@@ -286,8 +286,8 @@ def phone(phone, region, no_provider, reports, out_dir, timeout, limit, offline,
     run = _Run("phone", "phone number (masked)", timeout=timeout, limit=limit, offline=offline, no_cache=True, verbose=verbose)
     with run:
         info = phone_recon(run.ctx, phone, region=region, provider=not no_provider)
-    e = info["e164"]
-    run.inv.target = e[:-4].replace(e[3:-4], "*" * len(e[3:-4])) + e[-4:] if len(e) > 8 else e
+    national = info["e164"][1 + len(str(info["country_code"])):]
+    run.inv.target = f"+{info['country_code']}{'*' * max(len(national) - 4, 0)}{national[-4:]}"
     run.finish(reports, out_dir, verbose)
 
 

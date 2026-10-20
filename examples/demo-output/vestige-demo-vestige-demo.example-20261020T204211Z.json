@@ -1,0 +1,1961 @@
+{
+  "schema_version": "1.0",
+  "tool": {
+    "name": "VESTIGE",
+    "version": "1.0.0"
+  },
+  "investigation": {
+    "command": "demo",
+    "target": "vestige-demo.example",
+    "mode": "offline-fixture",
+    "started_at": "2026-10-20T20:42:11Z",
+    "finished_at": "2026-10-20T20:42:11Z",
+    "scope": {
+      "root_domain": "vestige-demo.example",
+      "http_checks_enabled": true,
+      "mode": "active-http-authorised"
+    }
+  },
+  "sources": [
+    {
+      "module": "archive",
+      "source": "urlscan (read-only search)",
+      "status": "OK",
+      "detail": "anonymous (low rate limits)",
+      "items": 2,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "archive",
+      "source": "wayback",
+      "status": "OK",
+      "detail": "",
+      "items": 5,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "certificates",
+      "source": "crt.sh",
+      "status": "OK",
+      "detail": "3 certs, 6 names",
+      "items": 8,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "dns",
+      "source": "dns-records",
+      "status": "OK",
+      "detail": "",
+      "items": 14,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "disposable-list",
+      "status": "OK",
+      "detail": "disposable-email-domains (GitHub, maintained list)",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "dkim:selector1",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "dmarc",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "mta-sts",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "mx",
+      "status": "OK",
+      "detail": "",
+      "items": 2,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "spf",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "email",
+      "source": "tls-rpt",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "ips",
+      "source": "asn (team-cymru)",
+      "status": "OK",
+      "detail": "",
+      "items": 6,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "ips",
+      "source": "exposure (shodan-internetdb)",
+      "status": "OK",
+      "detail": "partial: 2606:4700:20::6814:1e28: offline",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "ips",
+      "source": "geolocation (ipapi.co)",
+      "status": "OK",
+      "detail": "partial: 104.20.30.41: ratelimit",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "registration",
+      "source": "rdap",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "reputation",
+      "source": "abuseipdb (apex IPs)",
+      "status": "OK",
+      "detail": "",
+      "items": 3,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "reputation",
+      "source": "virustotal (domain)",
+      "status": "SKIPPED",
+      "detail": "VIRUSTOTAL_KEY not set; see docs/API_SETUP.md",
+      "items": 0,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "subdomains",
+      "source": "alienvault-otx",
+      "status": "SKIPPED",
+      "detail": "OTX_API_KEY not set; see docs/API_SETUP.md",
+      "items": 0,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "subdomains",
+      "source": "dns-verification",
+      "status": "OK",
+      "detail": "7 of 8 discovered names tested",
+      "items": 7,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "subdomains",
+      "source": "hackertarget",
+      "status": "OK",
+      "detail": "",
+      "items": 3,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "subdomains",
+      "source": "virustotal",
+      "status": "SKIPPED",
+      "detail": "VIRUSTOTAL_KEY not set; see docs/API_SETUP.md",
+      "items": 0,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "web",
+      "source": "http-response",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": 200,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "web",
+      "source": "robots.txt/sitemap",
+      "status": "OK",
+      "detail": "",
+      "items": 2,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "web",
+      "source": "security.txt",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    },
+    {
+      "module": "web",
+      "source": "tls-certificate",
+      "status": "OK",
+      "detail": "",
+      "items": 1,
+      "duration_s": 0.0,
+      "http_status": null,
+      "queried_at": "2026-10-20T20:42:11Z"
+    }
+  ],
+  "observations": [
+    {
+      "kind": "asn",
+      "value": "AS13335",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "ip": "104.20.30.40",
+        "asn": 13335,
+        "prefix": "104.20.0.0/20",
+        "country": "US",
+        "registry": "arin",
+        "allocated": "2010-07-14",
+        "as_name": "CLOUDFLARENET, US",
+        "source_refs": [
+          "asn (team-cymru)"
+        ],
+        "sources": [
+          "team-cymru-dns"
+        ]
+      }
+    },
+    {
+      "kind": "asn",
+      "value": "AS15169",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "ip": "142.250.10.26",
+        "asn": 15169,
+        "prefix": "142.250.0.0/16",
+        "country": "US",
+        "registry": "arin",
+        "allocated": "2000-03-30",
+        "as_name": "GOOGLE, US",
+        "source_refs": [
+          "asn (team-cymru)"
+        ],
+        "sources": [
+          "team-cymru-dns"
+        ]
+      }
+    },
+    {
+      "kind": "certificate",
+      "value": "crt.sh:9001",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "id": 9001,
+        "issuer": "C=US, O=Demo CA, CN=Demo CA R1",
+        "not_before": "2026-06-01T00:00:00",
+        "not_after": "2026-12-01T00:00:00",
+        "serial": "01DEMO",
+        "names": [
+          "api.vestige-demo.example",
+          "vestige-demo.example",
+          "www.vestige-demo.example"
+        ],
+        "logged_at": "2026-06-01T10:00:00",
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ]
+      }
+    },
+    {
+      "kind": "certificate",
+      "value": "crt.sh:9002",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "id": 9002,
+        "issuer": "C=US, O=Demo CA, CN=Demo CA R1",
+        "not_before": "2025-02-11T00:00:00",
+        "not_after": "2025-05-12T00:00:00",
+        "serial": "02DEMO",
+        "names": [
+          "dev.vestige-demo.example",
+          "staging.vestige-demo.example"
+        ],
+        "logged_at": "2025-02-11T10:00:00",
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ]
+      }
+    },
+    {
+      "kind": "certificate",
+      "value": "crt.sh:9003",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "id": 9003,
+        "issuer": "C=US, O=Demo CA, CN=Demo CA R1",
+        "not_before": "2026-03-01T00:00:00",
+        "not_after": "2026-09-27T00:00:00",
+        "serial": "03DEMO",
+        "names": [
+          "mail.vestige-demo.example"
+        ],
+        "logged_at": "2026-03-01T10:00:00",
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ]
+      }
+    },
+    {
+      "kind": "disposable_domain",
+      "value": "no",
+      "source": "disposable-list",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "disposable": false,
+        "list_size": 175,
+        "list_provenance": "disposable-email-domains (GitHub, maintained list)",
+        "source_refs": [
+          "disposable-list"
+        ],
+        "sources": [
+          "disposable-list"
+        ]
+      }
+    },
+    {
+      "kind": "dkim",
+      "value": "selector1: not found",
+      "source": "dns",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "selector": "selector1",
+        "present": false,
+        "note": "selector not found; this does not prove DKIM is unused (other selectors may exist)",
+        "source_refs": [
+          "dkim:selector1"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dmarc",
+      "value": "v=DMARC1; p=none; rua=mailto:dmarc-reports@vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": true,
+        "valid": true,
+        "found_at": "_dmarc.vestige-demo.example",
+        "inherited": false,
+        "policy": "none",
+        "subdomain_policy": null,
+        "pct": 100,
+        "rua": [
+          "mailto:dmarc-reports@vestige-demo.example"
+        ],
+        "ruf": [],
+        "adkim": "r",
+        "aspf": "r",
+        "interpretation": "monitoring only: no enforcement",
+        "tags": {
+          "v": "DMARC1",
+          "p": "none",
+          "rua": "mailto:dmarc-reports@vestige-demo.example"
+        },
+        "source_refs": [
+          "dmarc"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_provider",
+      "value": "Cloudflare",
+      "source": "dns (inferred from NS names)",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "nameservers": [
+          "ada.ns.cloudflare.com",
+          "bob.ns.cloudflare.com"
+        ],
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns (inferred from NS names)"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example A 104.20.30.40",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "A",
+        "value": "104.20.30.40",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example A 104.20.30.41",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "A",
+        "value": "104.20.30.41",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example AAAA 2606:4700:20::6814:1e28",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "AAAA",
+        "value": "2606:4700:20::6814:1e28",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example MX 10 mx1.vestige-demo.example.",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "MX",
+        "value": "10 mx1.vestige-demo.example.",
+        "priority": 10,
+        "host": "mx1.vestige-demo.example",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example MX 20 mx2.vestige-demo.example.",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "MX",
+        "value": "20 mx2.vestige-demo.example.",
+        "priority": 20,
+        "host": "mx2.vestige-demo.example",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example NS ada.ns.cloudflare.com.",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "NS",
+        "value": "ada.ns.cloudflare.com.",
+        "host": "ada.ns.cloudflare.com",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example NS bob.ns.cloudflare.com.",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "NS",
+        "value": "bob.ns.cloudflare.com.",
+        "host": "bob.ns.cloudflare.com",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example SOA ada.ns.cloudflare.com. dns.cloudflare.com. 2345678901 10000 2400 604800 1800",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "SOA",
+        "value": "ada.ns.cloudflare.com. dns.cloudflare.com. 2345678901 10000 2400 604800 1800",
+        "mname": "ada.ns.cloudflare.com",
+        "rname": "dns.cloudflare.com",
+        "serial": 2345678901,
+        "refresh": 10000,
+        "retry": 2400,
+        "expire": 604800,
+        "minimum": 1800,
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example TXT site-verification=demo-fixture-token",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "TXT",
+        "value": "site-verification=demo-fixture-token",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dns_record",
+      "value": "vestige-demo.example TXT v=spf1 include:_spf.google.com include:sendgrid.net ~all",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "name": "vestige-demo.example",
+        "type": "TXT",
+        "value": "v=spf1 include:_spf.google.com include:sendgrid.net ~all",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "dnssec",
+      "value": "unsigned",
+      "source": "dns",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "dnskey_count": 0,
+        "ds_count": 0,
+        "validated": false,
+        "note": "presence of DNSKEY/DS only; signatures were not validated",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "exposure_metadata",
+      "value": "104.20.30.40",
+      "source": "shodan-internetdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "ip": "104.20.30.40",
+        "ports": [
+          80,
+          443
+        ],
+        "hostnames": [],
+        "tags": [
+          "cdn"
+        ],
+        "cpes": [],
+        "vulns": [
+          "CVE-2021-41773"
+        ],
+        "note": "passive Shodan crawler data; may be stale; vulnerability IDs are inferred from banners and unverified",
+        "source_refs": [
+          "exposure (shodan-internetdb)"
+        ],
+        "sources": [
+          "shodan-internetdb"
+        ]
+      }
+    },
+    {
+      "kind": "geolocation",
+      "value": "104.20.30.40",
+      "source": "ipapi.co",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "ip": "104.20.30.40",
+        "country": "United States",
+        "country_code": "US",
+        "region": "California",
+        "city": "San Francisco",
+        "timezone": "America/Los_Angeles",
+        "org": "CLOUDFLARENET",
+        "asn": "AS13335",
+        "latitude": 37.77,
+        "longitude": -122.41,
+        "accuracy_note": "IP geolocation is approximate (often city/region level or ISP hub); it does not locate a person",
+        "source_refs": [
+          "geolocation (ipapi.co)"
+        ],
+        "sources": [
+          "ipapi.co"
+        ]
+      }
+    },
+    {
+      "kind": "historical_url",
+      "value": "http://old-shop.vestige-demo.example/cart?item=4&session=[REDACTED]",
+      "source": "wayback",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2019-03-01",
+        "last_seen": "2019-03-01",
+        "archived_status": "200",
+        "mimetype": "text/html",
+        "note": "earliest capture per URL (collapse=urlkey); describes the past, not the current state",
+        "source_refs": [
+          "wayback"
+        ],
+        "sources": [
+          "wayback"
+        ]
+      }
+    },
+    {
+      "kind": "historical_url",
+      "value": "https://blog.vestige-demo.example/2021/hello-world",
+      "source": "wayback",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2021-10-10",
+        "last_seen": "2021-10-10",
+        "archived_status": "200",
+        "mimetype": "text/html",
+        "note": "earliest capture per URL (collapse=urlkey); describes the past, not the current state",
+        "source_refs": [
+          "wayback"
+        ],
+        "sources": [
+          "wayback"
+        ]
+      }
+    },
+    {
+      "kind": "historical_url",
+      "value": "https://vestige-demo.example/about",
+      "source": "wayback",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2020-06-15",
+        "last_seen": "2020-06-15",
+        "archived_status": "200",
+        "mimetype": "text/html",
+        "note": "earliest capture per URL (collapse=urlkey); describes the past, not the current state",
+        "source_refs": [
+          "wayback"
+        ],
+        "sources": [
+          "wayback"
+        ]
+      }
+    },
+    {
+      "kind": "historical_url",
+      "value": "https://www.vestige-demo.example/?token=[REDACTED]",
+      "source": "urlscan",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2026-08-14",
+        "last_seen": "2026-08-14",
+        "observed_ip": "104.20.30.40",
+        "urlscan_result_id": "demo-0001",
+        "note": "existing public scan record (read-only search); no new scan was submitted",
+        "source_refs": [
+          "urlscan (read-only search)"
+        ],
+        "sources": [
+          "urlscan"
+        ]
+      }
+    },
+    {
+      "kind": "http_response",
+      "value": "vestige-demo.example",
+      "source": "direct-http",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "host": "vestige-demo.example",
+        "final_url": "https://vestige-demo.example/",
+        "status": 200,
+        "redirect_chain": [
+          {
+            "url": "https://vestige-demo.example/",
+            "status": 200
+          }
+        ],
+        "redirect_note": "",
+        "technology_headers": {
+          "server": "nginx/1.18.0"
+        },
+        "headers": {
+          "strict-transport-security": null,
+          "content-security-policy": null,
+          "x-content-type-options": "nosniff",
+          "referrer-policy": null,
+          "permissions-policy": null,
+          "x-frame-options": null,
+          "_is_https": true
+        },
+        "source_refs": [
+          "http-response"
+        ],
+        "sources": [
+          "direct-http"
+        ]
+      }
+    },
+    {
+      "kind": "mta_sts",
+      "value": "missing",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": false,
+        "source_refs": [
+          "mta-sts"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "mx",
+      "value": "mx1.vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "priority": 10,
+        "domain": "vestige-demo.example",
+        "source_refs": [
+          "mx"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "mx",
+      "value": "mx2.vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "priority": 20,
+        "domain": "vestige-demo.example",
+        "source_refs": [
+          "mx"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "registration",
+      "value": "vestige-demo.example",
+      "source": "rdap (rdap.demo.example)",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "domain": "vestige-demo.example",
+        "registrar": "Demo Registrar Inc. (fixture)",
+        "registrar_iana_id": "9999",
+        "registered": "2019-11-05T09:00:00Z",
+        "expires": "2026-11-05T09:00:00Z",
+        "last_changed": "2026-09-01T09:00:00Z",
+        "status": [
+          "client transfer prohibited"
+        ],
+        "nameservers": [
+          "ada.ns.cloudflare.com",
+          "bob.ns.cloudflare.com"
+        ],
+        "dnssec_delegation_signed": false,
+        "via": "rdap",
+        "rdap_server": "https://rdap.demo.example",
+        "registered_domain": "vestige-demo.example",
+        "source_refs": [
+          "rdap"
+        ],
+        "sources": [
+          "rdap (rdap.demo.example)"
+        ]
+      }
+    },
+    {
+      "kind": "reputation",
+      "value": "abuseipdb:104.20.30.40",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "subject": "104.20.30.40",
+        "abuse_confidence_score": 32,
+        "total_reports": 7,
+        "distinct_reporters": 3,
+        "last_reported_at": "2026-09-20T12:00:00+00:00",
+        "is_whitelisted": false,
+        "usage_type": "Content Delivery Network",
+        "isp": "Demo CDN",
+        "country_code": "US",
+        "window_days": 90,
+        "note": "community-reported abuse confidence; not proof of malicious activity",
+        "source_refs": [
+          "abuseipdb (apex IPs)"
+        ],
+        "sources": [
+          "abuseipdb"
+        ]
+      }
+    },
+    {
+      "kind": "reputation",
+      "value": "abuseipdb:104.20.30.41",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "subject": "104.20.30.41",
+        "abuse_confidence_score": 32,
+        "total_reports": 7,
+        "distinct_reporters": 3,
+        "last_reported_at": "2026-09-20T12:00:00+00:00",
+        "is_whitelisted": false,
+        "usage_type": "Content Delivery Network",
+        "isp": "Demo CDN",
+        "country_code": "US",
+        "window_days": 90,
+        "note": "community-reported abuse confidence; not proof of malicious activity",
+        "source_refs": [
+          "abuseipdb (apex IPs)"
+        ],
+        "sources": [
+          "abuseipdb"
+        ]
+      }
+    },
+    {
+      "kind": "reputation",
+      "value": "abuseipdb:2606:4700:20::6814:1e28",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "subject": "2606:4700:20::6814:1e28",
+        "abuse_confidence_score": 32,
+        "total_reports": 7,
+        "distinct_reporters": 3,
+        "last_reported_at": "2026-09-20T12:00:00+00:00",
+        "is_whitelisted": false,
+        "usage_type": "Content Delivery Network",
+        "isp": "Demo CDN",
+        "country_code": "US",
+        "window_days": 90,
+        "note": "community-reported abuse confidence; not proof of malicious activity",
+        "source_refs": [
+          "abuseipdb (apex IPs)"
+        ],
+        "sources": [
+          "abuseipdb"
+        ]
+      }
+    },
+    {
+      "kind": "reverse_dns",
+      "value": "104.20.30.40 demo-edge.vestige-demo.example",
+      "source": "dns",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "ip": "104.20.30.40",
+        "ptr": "demo-edge.vestige-demo.example",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "robots_txt",
+      "value": "vestige-demo.example",
+      "source": "direct-http",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": true,
+        "disallow_rules": 2,
+        "allow_rules": 0,
+        "sitemaps": [
+          "https://vestige-demo.example/sitemap.xml"
+        ],
+        "user_agent_groups": 1,
+        "source_refs": [
+          "robots.txt/sitemap"
+        ],
+        "sources": [
+          "direct-http"
+        ]
+      }
+    },
+    {
+      "kind": "security_txt",
+      "value": "absent",
+      "source": "direct-http",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": false,
+        "checked": [
+          "/.well-known/security.txt",
+          "/security.txt"
+        ],
+        "source_refs": [
+          "security.txt"
+        ],
+        "sources": [
+          "direct-http"
+        ]
+      }
+    },
+    {
+      "kind": "sitemap",
+      "value": "https://vestige-demo.example/sitemap.xml",
+      "source": "direct-http",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": true,
+        "url_count": 1,
+        "is_index": false,
+        "lastmod_min": "2026-09-01",
+        "lastmod_max": "2026-09-01",
+        "source_refs": [
+          "robots.txt/sitemap"
+        ],
+        "sources": [
+          "direct-http"
+        ]
+      }
+    },
+    {
+      "kind": "spf",
+      "value": "v=spf1 include:_spf.google.com include:sendgrid.net ~all",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": true,
+        "valid": true,
+        "mechanisms": [
+          "+include:_spf.google.com",
+          "+include:sendgrid.net",
+          "~all"
+        ],
+        "includes": [
+          "_spf.google.com",
+          "sendgrid.net"
+        ],
+        "ip_ranges": [],
+        "redirect": null,
+        "all": "~",
+        "policy": "soft fail (unauthorised senders are marked)",
+        "dns_lookup_terms": 2,
+        "flags": [],
+        "source_refs": [
+          "spf"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "api.vestige-demo.example",
+      "source": "crt.sh, hackertarget",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2026-06-01T00:00:00",
+        "last_seen": "2026-12-01T00:00:00",
+        "cert_count": 1,
+        "from_wildcard_cert_only": false,
+        "source_refs": [
+          "crt.sh",
+          "hackertarget"
+        ],
+        "sources": [
+          "crt.sh",
+          "hackertarget"
+        ],
+        "reported_ip": "104.20.30.41",
+        "dns_state": "resolved",
+        "resolved_ips": [
+          "104.20.30.41"
+        ],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "blog.vestige-demo.example",
+      "source": "wayback",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2021-10-10",
+        "last_seen": "2021-10-10",
+        "archive_only_reference": true,
+        "source_refs": [
+          "wayback"
+        ],
+        "sources": [
+          "wayback"
+        ],
+        "dns_state": "resolved",
+        "resolved_ips": [
+          "104.20.30.43"
+        ],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "dev.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2025-02-11T00:00:00",
+        "last_seen": "2025-05-12T00:00:00",
+        "cert_count": 1,
+        "from_wildcard_cert_only": true,
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ],
+        "dns_state": "unverified",
+        "resolved_ips": [],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "mail.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2026-03-01T00:00:00",
+        "last_seen": "2026-09-27T00:00:00",
+        "cert_count": 1,
+        "from_wildcard_cert_only": false,
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ],
+        "dns_state": "resolved",
+        "resolved_ips": [
+          "142.250.10.26"
+        ],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "old-shop.vestige-demo.example",
+      "source": "wayback",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2019-03-01",
+        "last_seen": "2019-03-01",
+        "archive_only_reference": true,
+        "source_refs": [
+          "wayback"
+        ],
+        "sources": [
+          "wayback"
+        ],
+        "dns_state": "no_dns_answer",
+        "resolved_ips": [],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "staging.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2025-02-11T00:00:00",
+        "last_seen": "2025-05-12T00:00:00",
+        "cert_count": 1,
+        "from_wildcard_cert_only": false,
+        "source_refs": [
+          "crt.sh"
+        ],
+        "sources": [
+          "crt.sh"
+        ],
+        "dns_state": "no_dns_answer",
+        "resolved_ips": [],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "vpn.vestige-demo.example",
+      "source": "hackertarget",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "reported_ip": "104.20.30.42",
+        "source_refs": [
+          "hackertarget"
+        ],
+        "sources": [
+          "hackertarget"
+        ],
+        "dns_state": "resolved",
+        "resolved_ips": [
+          "104.20.30.42"
+        ],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "subdomain",
+      "value": "www.vestige-demo.example",
+      "source": "crt.sh, hackertarget, urlscan",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "first_seen": "2026-06-01T00:00:00",
+        "last_seen": "2026-12-01T00:00:00",
+        "cert_count": 1,
+        "from_wildcard_cert_only": false,
+        "source_refs": [
+          "crt.sh",
+          "hackertarget",
+          "urlscan (read-only search)"
+        ],
+        "sources": [
+          "crt.sh",
+          "hackertarget",
+          "urlscan"
+        ],
+        "reported_ip": "104.20.30.40",
+        "historical_ips": [
+          "104.20.30.40"
+        ],
+        "dns_state": "resolved",
+        "resolved_ips": [
+          "104.20.30.40"
+        ],
+        "dns_tested_at": "2026-10-20T20:42:11Z"
+      }
+    },
+    {
+      "kind": "tls_certificate",
+      "value": "vestige-demo.example",
+      "source": "direct-tls",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "host": "vestige-demo.example",
+        "verified": true,
+        "hostname_valid": true,
+        "protocol": "TLSv1.3",
+        "issuer_org": "Demo CA (fixture)",
+        "issuer_cn": "Demo CA R1",
+        "subject_cn": "vestige-demo.example",
+        "san": [
+          "vestige-demo.example",
+          "www.vestige-demo.example"
+        ],
+        "not_before": "2026-09-01T00:00:00+00:00",
+        "not_after": "2026-10-13T00:00:00+00:00",
+        "days_until_expiry": 12,
+        "source_refs": [
+          "tls-certificate"
+        ],
+        "sources": [
+          "direct-tls"
+        ]
+      }
+    },
+    {
+      "kind": "tls_rpt",
+      "value": "missing",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "present": false,
+        "source_refs": [
+          "tls-rpt"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    },
+    {
+      "kind": "wildcard_dns",
+      "value": "absent",
+      "source": "dns",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "data": {
+        "wildcard": false,
+        "ips": [],
+        "probe": "vestige-4eac78d92ed2.vestige-demo.example",
+        "source_refs": [
+          "dns-records"
+        ],
+        "sources": [
+          "dns"
+        ]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "subject": "104.20.30.40",
+      "predicate": "announced_by",
+      "object": "AS13335",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 104.20.0.0/20"
+    },
+    {
+      "subject": "104.20.30.40",
+      "predicate": "has_reputation_observation",
+      "object": "abuseipdb",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "third-party report count/score"
+    },
+    {
+      "subject": "104.20.30.41",
+      "predicate": "announced_by",
+      "object": "AS13335",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 104.20.0.0/20"
+    },
+    {
+      "subject": "104.20.30.41",
+      "predicate": "has_reputation_observation",
+      "object": "abuseipdb",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "third-party report count/score"
+    },
+    {
+      "subject": "104.20.30.42",
+      "predicate": "announced_by",
+      "object": "AS13335",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 104.20.0.0/20"
+    },
+    {
+      "subject": "104.20.30.43",
+      "predicate": "announced_by",
+      "object": "AS13335",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 104.20.0.0/20"
+    },
+    {
+      "subject": "142.250.10.26",
+      "predicate": "announced_by",
+      "object": "AS15169",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 142.250.0.0/16"
+    },
+    {
+      "subject": "142.250.10.27",
+      "predicate": "announced_by",
+      "object": "AS15169",
+      "source": "team-cymru-dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "BGP origin for 142.250.0.0/16"
+    },
+    {
+      "subject": "2606:4700:20::6814:1e28",
+      "predicate": "has_reputation_observation",
+      "object": "abuseipdb",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "third-party report count/score"
+    },
+    {
+      "subject": "api.vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9001",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "api.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.41",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "blog.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.43",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "dev.vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9002",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "mail.vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9003",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "mail.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "142.250.10.26",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "mx1.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "142.250.10.26",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "mx2.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "142.250.10.27",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "staging.vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9002",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9001",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_nameserver",
+      "object": "ada.ns.cloudflare.com",
+      "source": "dns, rdap",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_nameserver",
+      "object": "bob.ns.cloudflare.com",
+      "source": "dns, rdap",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "api.vestige-demo.example",
+      "source": "crt.sh, hackertarget",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "name appears in a CT-logged certificate; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "blog.vestige-demo.example",
+      "source": "wayback",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "hostname appears in archived URLs; may no longer exist"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "dev.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "name appears in a CT-logged certificate; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "mail.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "name appears in a CT-logged certificate; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "old-shop.vestige-demo.example",
+      "source": "wayback",
+      "confidence": "low",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "hostname appears in archived URLs; may no longer exist"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "staging.vestige-demo.example",
+      "source": "crt.sh",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "name appears in a CT-logged certificate; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "vpn.vestige-demo.example",
+      "source": "hackertarget",
+      "confidence": "medium",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "reported by passive source; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "has_subdomain",
+      "object": "www.vestige-demo.example",
+      "source": "crt.sh, hackertarget, urlscan",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "name appears in a CT-logged certificate; liveness not tested"
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.40",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.41",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "2606:4700:20::6814:1e28",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "uses_mail_exchanger",
+      "object": "mx1.vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vestige-demo.example",
+      "predicate": "uses_mail_exchanger",
+      "object": "mx2.vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "vpn.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.42",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    },
+    {
+      "subject": "www.vestige-demo.example",
+      "predicate": "covered_by_certificate",
+      "object": "crt.sh:9001",
+      "source": "crt.sh",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": "SAN listed in the certificate; says nothing about operator"
+    },
+    {
+      "subject": "www.vestige-demo.example",
+      "predicate": "resolves_to",
+      "object": "104.20.30.40",
+      "source": "dns",
+      "confidence": "high",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "note": ""
+    }
+  ],
+  "findings": [
+    {
+      "id": "VST-TLS-001",
+      "title": "TLS certificate expires in 12 days",
+      "severity": "medium",
+      "target": "vestige-demo.example",
+      "evidence": "notAfter 2026-10-13T00:00:00+00:00",
+      "source": "direct-tls",
+      "confidence": "high",
+      "explanation": "An unrenewed certificate will cause outages at expiry.",
+      "recommendation": "Renew or fix automated renewal.",
+      "standard": "RFC 5280",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-EXP-001",
+      "title": "Passive scanner data lists CVE identifiers for 104.20.30.40",
+      "severity": "low",
+      "target": "104.20.30.40",
+      "evidence": "1 CVE ID(s) in Shodan InternetDB (unverified), e.g. CVE-2021-41773",
+      "source": "shodan-internetdb",
+      "confidence": "low",
+      "explanation": "InternetDB infers vulnerabilities from service banners seen by a crawler, which can be stale, backported-patched or wrong. VESTIGE did not test the host.",
+      "recommendation": "Verify the actual software version and patch status on the host (with authorisation).",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-REG-001",
+      "title": "Domain registration expires in 35 days",
+      "severity": "low",
+      "target": "vestige-demo.example",
+      "evidence": "expiration: 2026-11-05T09:00:00Z (via rdap)",
+      "source": "rdap (rdap.demo.example)",
+      "confidence": "high",
+      "explanation": "An expired or soon-to-expire domain can lapse, causing outages and exposing the name to re-registration by others.",
+      "recommendation": "Renew the domain and enable auto-renew; check that registrar contacts are current.",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-REP-001",
+      "title": "AbuseIPDB reports abuse confidence 32% for 104.20.30.40",
+      "severity": "low",
+      "target": "104.20.30.40",
+      "evidence": "score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "explanation": "AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.",
+      "recommendation": "Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-REP-001",
+      "title": "AbuseIPDB reports abuse confidence 32% for 104.20.30.41",
+      "severity": "low",
+      "target": "104.20.30.41",
+      "evidence": "score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "explanation": "AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.",
+      "recommendation": "Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-REP-001",
+      "title": "AbuseIPDB reports abuse confidence 32% for 2606:4700:20::6814:1e28",
+      "severity": "low",
+      "target": "2606:4700:20::6814:1e28",
+      "evidence": "score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00",
+      "source": "abuseipdb",
+      "confidence": "medium",
+      "explanation": "AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.",
+      "recommendation": "Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-WEB-001",
+      "title": "HSTS header not set on HTTPS site",
+      "severity": "low",
+      "target": "vestige-demo.example",
+      "evidence": "https://vestige-demo.example/ returned HTTP 200 without Strict-Transport-Security.",
+      "source": "direct-http",
+      "confidence": "high",
+      "explanation": "Without HSTS, a browser's first plain-HTTP visit can be downgraded or intercepted by a network attacker. This is a hardening gap, not an exploitable flaw by itself.",
+      "recommendation": "Send Strict-Transport-Security: max-age=31536000; includeSubDomains once all subdomains support HTTPS.",
+      "standard": "RFC 6797",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-DNS-001",
+      "title": "DNSSEC not enabled",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "No DNSKEY or DS record found for the zone.",
+      "source": "dns",
+      "confidence": "medium",
+      "explanation": "DNSSEC adds origin authentication to DNS answers. It is optional, and many well-run domains do not use it.",
+      "recommendation": "Consider DNSSEC if the registrar and DNS host support it.",
+      "standard": "RFC 4033",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-DNS-003",
+      "title": "No CAA records",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "No CAA record set at vestige-demo.example.",
+      "source": "dns",
+      "confidence": "medium",
+      "explanation": "CAA restricts which certificate authorities may issue certificates. Absence means any CA may issue.",
+      "recommendation": "Consider publishing CAA records naming the CAs you use.",
+      "standard": "RFC 8659",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-HIST-001",
+      "title": "1 historical hostname(s) no longer resolve",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "old-shop.vestige-demo.example",
+      "source": "wayback/urlscan + dns",
+      "confidence": "medium",
+      "explanation": "These names appear in archives but returned no DNS answer when tested. They may be decommissioned; check that no dangling CNAMEs/records point to released resources. VESTIGE did not test for takeover.",
+      "recommendation": "Confirm the hostnames are intentionally retired.",
+      "standard": "",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-MAIL-002",
+      "title": "DMARC policy is monitoring-only (p=none)",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "_dmarc.vestige-demo.example: p=none; reports to mailto:dmarc-reports@vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "explanation": "p=none asks receivers not to act on failing mail. It is a normal first step of a DMARC rollout but offers no enforcement.",
+      "recommendation": "If reports show legitimate mail is aligned, move to p=quarantine and then p=reject.",
+      "standard": "RFC 7489 s6.3",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-MAIL-020",
+      "title": "No MTA-STS policy published",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "No TXT record at _mta-sts.vestige-demo.example",
+      "source": "dns",
+      "confidence": "high",
+      "explanation": "MTA-STS lets a domain require TLS for inbound SMTP and protects against downgrade attacks. Adoption is optional.",
+      "recommendation": "Consider publishing MTA-STS (start in testing mode) and TLS-RPT.",
+      "standard": "RFC 8461",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-WEB-003",
+      "title": "Browser hardening headers not set",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "Missing: content-security-policy, referrer-policy, permissions-policy",
+      "source": "direct-http",
+      "confidence": "high",
+      "explanation": "These headers reduce the impact of XSS, MIME sniffing and information leakage. Their absence is a defence-in-depth gap, not a vulnerability; some are irrelevant for API-only hosts.",
+      "recommendation": "Evaluate each header against the application's needs and add where appropriate.",
+      "standard": "W3C CSP3 / Fetch / Referrer-Policy / Permissions-Policy",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-WEB-005",
+      "title": "Version information disclosed in HTTP headers",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "server: nginx/1.18.0",
+      "source": "direct-http",
+      "confidence": "high",
+      "explanation": "Version strings help attackers match known vulnerabilities, but they do not mean the software is vulnerable (it may be patched or masked).",
+      "recommendation": "Remove or genericise version banners.",
+      "standard": "OWASP WSTG-INFO-02",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    },
+    {
+      "id": "VST-WEB-010",
+      "title": "No security.txt published",
+      "severity": "info",
+      "target": "vestige-demo.example",
+      "evidence": "Neither /.well-known/security.txt nor /security.txt returned a text file.",
+      "source": "direct-http",
+      "confidence": "medium",
+      "explanation": "security.txt gives researchers a standard way to report vulnerabilities. It is optional.",
+      "recommendation": "Publish /.well-known/security.txt with Contact and Expires.",
+      "standard": "RFC 9116",
+      "observed_at": "2026-10-20T20:42:11Z",
+      "kind": "observation"
+    }
+  ],
+  "limitations": [
+    "FIXTURE DATA: produced from canned responses by `vestige demo`; no network requests were made.",
+    "Direct checks inspected only the root host over HTTPS. Missing headers are configuration observations, not exploitable vulnerabilities. A DNS-rebinding race between the public-address check and the request is possible in principle (see docs/SECURITY.md).",
+    "Passive subdomain sources are incomplete by nature; absence of a name is not evidence it does not exist.",
+    "Subdomain states: 'resolved' = DNS returned an address at test time; 'no_dns_answer' = no A/AAAA answer; 'wildcard_only' = answer matches a wildcard record; 'unverified' = not tested or lookup error.",
+    "Third-party reputation and exposure data are other parties' observations, not VESTIGE verdicts."
+  ],
+  "summary": {
+    "sources": {
+      "OK": 22,
+      "EMPTY": 0,
+      "FAILED": 0,
+      "SKIPPED": 3
+    },
+    "findings": {
+      "info": 8,
+      "low": 6,
+      "medium": 1,
+      "high": 0
+    },
+    "observations": 50,
+    "relationships": 37
+  }
+}

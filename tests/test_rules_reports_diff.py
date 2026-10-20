@@ -357,3 +357,8 @@ def test_diff_demo_against_itself_is_clean():
 
 def report_from(inv):
     return json.loads(to_json(inv))
+
+
+def test_html_status_table_shows_item_counts_not_method_reprs():
+    html = to_html(run_demo())
+    assert "built-in method" not in html and "object at 0x" not in html

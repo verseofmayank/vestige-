@@ -1,0 +1,20 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.11, pytest-9.1.1, pluggy-1.7.0
+rootdir: C:/Users/Mayank/vestige
+configfile: pytest.ini
+testpaths: tests
+collected 309 items
+
+tests/test_cli.py .........................                              [  8%]
+tests/test_domain_modules.py .......................................     [ 20%]
+tests/test_email_ip_phone.py ........................................... [ 34%]
+...........................                                              [ 43%]
+tests/test_http_client.py .......................                        [ 50%]
+tests/test_rules_reports_diff.py ....................................... [ 63%]
+.......                                                                  [ 65%]
+tests/test_scope.py .................................................... [ 82%]
+..                                                                       [ 83%]
+tests/test_username.py ...........................                       [ 91%]
+tests/test_web_scope.py .........................                        [100%]
+
+============================= 309 passed in 3.65s =============================

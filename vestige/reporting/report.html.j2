@@ -96,7 +96,7 @@ footer{margin-top:40px;color:var(--muted);font-size:12.5px}
 <div class="table-wrap"><table>
 <tr><th>Module</th><th>Source</th><th>Status</th><th>Items</th><th>Detail</th></tr>
 {% for s in sources %}
-<tr><td>{{ s.module }}</td><td>{{ s.source }}</td><td>{{ tag("st-" ~ s.status, s.status) }}</td><td>{{ s.items }}</td><td>{{ s.detail }}</td></tr>
+<tr><td>{{ s.module }}</td><td>{{ s.source }}</td><td>{{ tag("st-" ~ s.status, s.status) }}</td><td>{{ s["items"] }}</td><td>{{ s.detail }}</td></tr>
 {% endfor %}
 </table></div>
 

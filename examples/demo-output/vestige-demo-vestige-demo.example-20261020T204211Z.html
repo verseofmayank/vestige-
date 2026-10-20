@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<meta name="generator" content="VESTIGE">
+<title>VESTIGE report - vestige-demo.example</title>
+<style>
+:root{--bg:#f6f8fa;--surface:#fff;--surface2:#eef1f5;--text:#1b2430;--muted:#5a6678;--line:#d6dce5;--accent:#0a7ea4;
+--high:#c62828;--medium:#d9730d;--low:#b58900;--info:#3b6fb6;--ok:#1b8a4b;--fail:#c62828;--skip:#6b7280;--empty:#6b7280}
+@media (prefers-color-scheme:dark){:root{--bg:#0e131a;--surface:#161d27;--surface2:#1d2633;--text:#e4e9f0;--muted:#97a3b4;--line:#2a3545;--accent:#4fc3e8;
+--high:#ff6b6b;--medium:#ffa14a;--low:#e6c15a;--info:#7fb0f0;--ok:#4cd081;--fail:#ff6b6b;--skip:#97a3b4;--empty:#97a3b4}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+header{background:var(--surface);border-bottom:1px solid var(--line);padding:24px 0;margin-bottom:20px}
+header .brand{font-weight:700;letter-spacing:.2em;color:var(--accent);font-size:13px}
+h1{margin:6px 0 4px;font-size:26px;word-break:break-all}
+h2{font-size:18px;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:18px 0 6px}
+.muted{color:var(--muted)}
+.banner{border:2px dashed var(--medium);background:var(--surface);padding:12px 16px;border-radius:8px;margin:0 0 18px;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.card b{display:block;font-size:24px;line-height:1.2}
+.card span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.sev-high,.st-FAILED,.st-BLOCKED,.st-ERROR{color:var(--high)}.sev-medium{color:var(--medium)}.sev-low{color:var(--low)}.sev-info{color:var(--info)}
+.st-OK,.st-FOUND,.st-resolved{color:var(--ok)}.st-SKIPPED,.st-UNKNOWN,.st-EMPTY,.st-NOT_FOUND,.st-unverified,.st-no_dns_answer,.st-wildcard_only{color:var(--skip)}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface2);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.mono,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all}
+details.finding{background:var(--surface);border:1px solid var(--line);border-left:5px solid currentColor;border-radius:8px;margin:10px 0;padding:0}
+details.finding>summary{cursor:pointer;padding:10px 14px;font-weight:600;color:var(--text);list-style-position:inside}
+details.finding .body{padding:0 14px 12px;color:var(--text)}
+details.finding dl{display:grid;grid-template-columns:130px 1fr;gap:4px 12px;margin:8px 0}
+details.finding dt{color:var(--muted)}details.finding dd{margin:0;word-break:break-word}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;color:var(--muted)}
+ul.limits{margin:6px 0;padding-left:20px}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:var(--surface2);padding:1px 5px;border-radius:4px}
+footer{margin-top:40px;color:var(--muted);font-size:12.5px}
+@media (max-width:560px){details.finding dl{grid-template-columns:1fr}h1{font-size:21px}}
+@media print{body{background:#fff;color:#000}details.finding{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">VESTIGE &middot; mayhack</div>
+<h1>vestige-demo.example</h1>
+<div class="muted">Command <code>demo</code> &middot; started 2026-10-20T20:42:11Z &middot; finished 2026-10-20T20:42:11Z &middot; scope: active-http-authorised</div>
+</div></header>
+<main class="wrap">
+<div class="banner">FIXTURE DATA &mdash; this report was produced by the offline demonstration from canned responses. It is NOT the result of a live scan and must not be cited as one.</div>
+
+<div class="cards">
+  <div class="card"><b>15</b><span>findings</span></div>
+<div class="card"><b class="sev-high">0</b><span>high</span></div><div class="card"><b class="sev-medium">1</b><span>medium</span></div><div class="card"><b class="sev-low">6</b><span>low</span></div><div class="card"><b class="sev-info">8</b><span>info</span></div>  <div class="card"><b class="st-OK">22</b><span>sources OK</span></div>
+  <div class="card"><b>0</b><span>empty</span></div>
+  <div class="card"><b class="st-FAILED">0</b><span>failed</span></div>
+  <div class="card"><b class="st-SKIPPED">3</b><span>skipped</span></div>
+</div>
+
+<div class="note">Findings are <strong>observations with evidence</strong>, not confirmed vulnerabilities. Severity is conservative, and no aggregate risk score is computed. Third-party reputation data are other parties' opinions.</div>
+
+<h2>Findings</h2>
+<details class="finding sev-medium" open>
+<summary><span class="tag sev-medium">MEDIUM</span> <span class="mono">VST-TLS-001</span> &nbsp;TLS certificate expires in 12 days</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">notAfter 2026-10-13T00:00:00+00:00</dd>
+<dt>Why it matters</dt><dd>An unrenewed certificate will cause outages at expiry.</dd>
+<dt>Recommended next step</dt><dd>Renew or fix automated renewal.</dd>
+<dt>Source / confidence</dt><dd>direct-tls &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 5280</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-EXP-001</span> &nbsp;Passive scanner data lists CVE identifiers for 104.20.30.40</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>104.20.30.40</dd>
+<dt>Evidence</dt><dd class="mono">1 CVE ID(s) in Shodan InternetDB (unverified), e.g. CVE-2021-41773</dd>
+<dt>Why it matters</dt><dd>InternetDB infers vulnerabilities from service banners seen by a crawler, which can be stale, backported-patched or wrong. VESTIGE did not test the host.</dd>
+<dt>Recommended next step</dt><dd>Verify the actual software version and patch status on the host (with authorisation).</dd>
+<dt>Source / confidence</dt><dd>shodan-internetdb &middot; confidence: low &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-REG-001</span> &nbsp;Domain registration expires in 35 days</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">expiration: 2026-11-05T09:00:00Z (via rdap)</dd>
+<dt>Why it matters</dt><dd>An expired or soon-to-expire domain can lapse, causing outages and exposing the name to re-registration by others.</dd>
+<dt>Recommended next step</dt><dd>Renew the domain and enable auto-renew; check that registrar contacts are current.</dd>
+<dt>Source / confidence</dt><dd>rdap (rdap.demo.example) &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-REP-001</span> &nbsp;AbuseIPDB reports abuse confidence 32% for 104.20.30.40</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>104.20.30.40</dd>
+<dt>Evidence</dt><dd class="mono">score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00</dd>
+<dt>Why it matters</dt><dd>AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.</dd>
+<dt>Recommended next step</dt><dd>Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.</dd>
+<dt>Source / confidence</dt><dd>abuseipdb &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-REP-001</span> &nbsp;AbuseIPDB reports abuse confidence 32% for 104.20.30.41</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>104.20.30.41</dd>
+<dt>Evidence</dt><dd class="mono">score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00</dd>
+<dt>Why it matters</dt><dd>AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.</dd>
+<dt>Recommended next step</dt><dd>Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.</dd>
+<dt>Source / confidence</dt><dd>abuseipdb &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-REP-001</span> &nbsp;AbuseIPDB reports abuse confidence 32% for 2606:4700:20::6814:1e28</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>2606:4700:20::6814:1e28</dd>
+<dt>Evidence</dt><dd class="mono">score=32, reports=7, distinct reporters=3, last=2026-09-20T12:00:00+00:00</dd>
+<dt>Why it matters</dt><dd>AbuseIPDB aggregates community reports over 90 days. Shared hosting, NAT and compromised-then-cleaned hosts can inflate scores; it is not proof the owner is malicious.</dd>
+<dt>Recommended next step</dt><dd>Review the report categories on AbuseIPDB and check whether the host was compromised or is shared infrastructure.</dd>
+<dt>Source / confidence</dt><dd>abuseipdb &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-low" >
+<summary><span class="tag sev-low">LOW</span> <span class="mono">VST-WEB-001</span> &nbsp;HSTS header not set on HTTPS site</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">https://vestige-demo.example/ returned HTTP 200 without Strict-Transport-Security.</dd>
+<dt>Why it matters</dt><dd>Without HSTS, a browser&#39;s first plain-HTTP visit can be downgraded or intercepted by a network attacker. This is a hardening gap, not an exploitable flaw by itself.</dd>
+<dt>Recommended next step</dt><dd>Send Strict-Transport-Security: max-age=31536000; includeSubDomains once all subdomains support HTTPS.</dd>
+<dt>Source / confidence</dt><dd>direct-http &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 6797</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-DNS-001</span> &nbsp;DNSSEC not enabled</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">No DNSKEY or DS record found for the zone.</dd>
+<dt>Why it matters</dt><dd>DNSSEC adds origin authentication to DNS answers. It is optional, and many well-run domains do not use it.</dd>
+<dt>Recommended next step</dt><dd>Consider DNSSEC if the registrar and DNS host support it.</dd>
+<dt>Source / confidence</dt><dd>dns &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 4033</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-DNS-003</span> &nbsp;No CAA records</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">No CAA record set at vestige-demo.example.</dd>
+<dt>Why it matters</dt><dd>CAA restricts which certificate authorities may issue certificates. Absence means any CA may issue.</dd>
+<dt>Recommended next step</dt><dd>Consider publishing CAA records naming the CAs you use.</dd>
+<dt>Source / confidence</dt><dd>dns &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 8659</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-HIST-001</span> &nbsp;1 historical hostname(s) no longer resolve</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">old-shop.vestige-demo.example</dd>
+<dt>Why it matters</dt><dd>These names appear in archives but returned no DNS answer when tested. They may be decommissioned; check that no dangling CNAMEs/records point to released resources. VESTIGE did not test for takeover.</dd>
+<dt>Recommended next step</dt><dd>Confirm the hostnames are intentionally retired.</dd>
+<dt>Source / confidence</dt><dd>wayback/urlscan + dns &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-MAIL-002</span> &nbsp;DMARC policy is monitoring-only (p=none)</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">_dmarc.vestige-demo.example: p=none; reports to mailto:dmarc-reports@vestige-demo.example</dd>
+<dt>Why it matters</dt><dd>p=none asks receivers not to act on failing mail. It is a normal first step of a DMARC rollout but offers no enforcement.</dd>
+<dt>Recommended next step</dt><dd>If reports show legitimate mail is aligned, move to p=quarantine and then p=reject.</dd>
+<dt>Source / confidence</dt><dd>dns &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 7489 s6.3</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-MAIL-020</span> &nbsp;No MTA-STS policy published</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">No TXT record at _mta-sts.vestige-demo.example</dd>
+<dt>Why it matters</dt><dd>MTA-STS lets a domain require TLS for inbound SMTP and protects against downgrade attacks. Adoption is optional.</dd>
+<dt>Recommended next step</dt><dd>Consider publishing MTA-STS (start in testing mode) and TLS-RPT.</dd>
+<dt>Source / confidence</dt><dd>dns &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 8461</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-WEB-003</span> &nbsp;Browser hardening headers not set</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">Missing: content-security-policy, referrer-policy, permissions-policy</dd>
+<dt>Why it matters</dt><dd>These headers reduce the impact of XSS, MIME sniffing and information leakage. Their absence is a defence-in-depth gap, not a vulnerability; some are irrelevant for API-only hosts.</dd>
+<dt>Recommended next step</dt><dd>Evaluate each header against the application&#39;s needs and add where appropriate.</dd>
+<dt>Source / confidence</dt><dd>direct-http &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>W3C CSP3 / Fetch / Referrer-Policy / Permissions-Policy</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-WEB-005</span> &nbsp;Version information disclosed in HTTP headers</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">server: nginx/1.18.0</dd>
+<dt>Why it matters</dt><dd>Version strings help attackers match known vulnerabilities, but they do not mean the software is vulnerable (it may be patched or masked).</dd>
+<dt>Recommended next step</dt><dd>Remove or genericise version banners.</dd>
+<dt>Source / confidence</dt><dd>direct-http &middot; confidence: high &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>OWASP WSTG-INFO-02</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+<details class="finding sev-info" >
+<summary><span class="tag sev-info">INFO</span> <span class="mono">VST-WEB-010</span> &nbsp;No security.txt published</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>vestige-demo.example</dd>
+<dt>Evidence</dt><dd class="mono">Neither /.well-known/security.txt nor /security.txt returned a text file.</dd>
+<dt>Why it matters</dt><dd>security.txt gives researchers a standard way to report vulnerabilities. It is optional.</dd>
+<dt>Recommended next step</dt><dd>Publish /.well-known/security.txt with Contact and Expires.</dd>
+<dt>Source / confidence</dt><dd>direct-http &middot; confidence: medium &middot; observed 2026-10-20T20:42:11Z</dd>
+<dt>Reference</dt><dd>RFC 9116</dd><dt>Classification</dt><dd>observation (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+
+<h2>What was checked (module &amp; source status)</h2>
+<div class="table-wrap"><table>
+<tr><th>Module</th><th>Source</th><th>Status</th><th>Items</th><th>Detail</th></tr>
+<tr><td>archive</td><td>urlscan (read-only search)</td><td><span class="tag st-OK">OK</span></td><td>2</td><td>anonymous (low rate limits)</td></tr>
+<tr><td>archive</td><td>wayback</td><td><span class="tag st-OK">OK</span></td><td>5</td><td></td></tr>
+<tr><td>certificates</td><td>crt.sh</td><td><span class="tag st-OK">OK</span></td><td>8</td><td>3 certs, 6 names</td></tr>
+<tr><td>dns</td><td>dns-records</td><td><span class="tag st-OK">OK</span></td><td>14</td><td></td></tr>
+<tr><td>email</td><td>disposable-list</td><td><span class="tag st-OK">OK</span></td><td>1</td><td>disposable-email-domains (GitHub, maintained list)</td></tr>
+<tr><td>email</td><td>dkim:selector1</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>email</td><td>dmarc</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>email</td><td>mta-sts</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>email</td><td>mx</td><td><span class="tag st-OK">OK</span></td><td>2</td><td></td></tr>
+<tr><td>email</td><td>spf</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>email</td><td>tls-rpt</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>ips</td><td>asn (team-cymru)</td><td><span class="tag st-OK">OK</span></td><td>6</td><td></td></tr>
+<tr><td>ips</td><td>exposure (shodan-internetdb)</td><td><span class="tag st-OK">OK</span></td><td>1</td><td>partial: 2606:4700:20::6814:1e28: offline</td></tr>
+<tr><td>ips</td><td>geolocation (ipapi.co)</td><td><span class="tag st-OK">OK</span></td><td>1</td><td>partial: 104.20.30.41: ratelimit</td></tr>
+<tr><td>registration</td><td>rdap</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>reputation</td><td>abuseipdb (apex IPs)</td><td><span class="tag st-OK">OK</span></td><td>3</td><td></td></tr>
+<tr><td>reputation</td><td>virustotal (domain)</td><td><span class="tag st-SKIPPED">SKIPPED</span></td><td>0</td><td>VIRUSTOTAL_KEY not set; see docs/API_SETUP.md</td></tr>
+<tr><td>subdomains</td><td>alienvault-otx</td><td><span class="tag st-SKIPPED">SKIPPED</span></td><td>0</td><td>OTX_API_KEY not set; see docs/API_SETUP.md</td></tr>
+<tr><td>subdomains</td><td>dns-verification</td><td><span class="tag st-OK">OK</span></td><td>7</td><td>7 of 8 discovered names tested</td></tr>
+<tr><td>subdomains</td><td>hackertarget</td><td><span class="tag st-OK">OK</span></td><td>3</td><td></td></tr>
+<tr><td>subdomains</td><td>virustotal</td><td><span class="tag st-SKIPPED">SKIPPED</span></td><td>0</td><td>VIRUSTOTAL_KEY not set; see docs/API_SETUP.md</td></tr>
+<tr><td>web</td><td>http-response</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>web</td><td>robots.txt/sitemap</td><td><span class="tag st-OK">OK</span></td><td>2</td><td></td></tr>
+<tr><td>web</td><td>security.txt</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+<tr><td>web</td><td>tls-certificate</td><td><span class="tag st-OK">OK</span></td><td>1</td><td></td></tr>
+</table></div>
+
+<h2>Domain &amp; DNS</h2>
+<h3>Registration (rdap)</h3>
+<div class="note"><code>registrar</code>: Demo Registrar Inc. (fixture)<br>
+<code>registrar_iana_id</code>: 9999<br>
+<code>registered</code>: 2019-11-05T09:00:00Z<br>
+<code>expires</code>: 2026-11-05T09:00:00Z<br>
+<code>last_changed</code>: 2026-09-01T09:00:00Z<br>
+<code>status</code>: <span class="mono">["client transfer prohibited"]</span><br>
+<code>nameservers</code>: <span class="mono">["ada.ns.cloudflare.com", "bob.ns.cloudflare.com"]</span><br>
+<code>dnssec_delegation_signed</code>: False<br>
+<code>rdap_server</code>: https://rdap.demo.example<br>
+<code>registered_domain</code>: vestige-demo.example<br>
+<code>source_refs</code>: <span class="mono">["rdap"]</span><br>
+<code>sources</code>: <span class="mono">["rdap (rdap.demo.example)"]</span><br>
+<span class="muted">Source: rdap (rdap.demo.example) &middot; confidence high</span></div>
+<h3>DNS records</h3>
+<div class="table-wrap"><table><tr><th>Type</th><th>Value</th><th>Source</th></tr>
+<tr><td>A</td><td class="mono">104.20.30.40</td><td>dns</td></tr><tr><td>A</td><td class="mono">104.20.30.41</td><td>dns</td></tr><tr><td>AAAA</td><td class="mono">2606:4700:20::6814:1e28</td><td>dns</td></tr><tr><td>MX</td><td class="mono">10 mx1.vestige-demo.example.</td><td>dns</td></tr><tr><td>MX</td><td class="mono">20 mx2.vestige-demo.example.</td><td>dns</td></tr><tr><td>NS</td><td class="mono">ada.ns.cloudflare.com.</td><td>dns</td></tr><tr><td>NS</td><td class="mono">bob.ns.cloudflare.com.</td><td>dns</td></tr><tr><td>SOA</td><td class="mono">ada.ns.cloudflare.com. dns.cloudflare.com. 2345678901 10000 2400 604800 1800</td><td>dns</td></tr><tr><td>TXT</td><td class="mono">site-verification=demo-fixture-token</td><td>dns</td></tr><tr><td>TXT</td><td class="mono">v=spf1 include:_spf.google.com include:sendgrid.net ~all</td><td>dns</td></tr></table></div>
+<p><strong>dnssec:</strong> unsigned <span class="muted">(dns, confidence medium) &mdash; presence of DNSKEY/DS only; signatures were not validated</span></p>
+<p><strong>wildcard_dns:</strong> absent <span class="muted">(dns, confidence medium)</span></p>
+<p><strong>dns_provider:</strong> Cloudflare <span class="muted">(dns (inferred from NS names), confidence low)</span></p>
+
+<h2>Subdomains (8)</h2>
+<p class="muted">"Discovered" names come from passive sources. Only <em>resolved</em> was confirmed by a DNS lookup; this does not prove the host serves anything.</p>
+<div class="table-wrap"><table>
+<tr><th>Name</th><th>DNS state</th><th>Addresses</th><th>Sources</th><th>Confidence</th><th>First seen</th></tr>
+<tr><td class="mono">api.vestige-demo.example</td><td><span class="tag st-resolved">resolved</span></td>
+<td class="mono">104.20.30.41</td><td>crt.sh, hackertarget</td><td>high</td><td>2026-06-01T00:00:00</td></tr>
+<tr><td class="mono">blog.vestige-demo.example</td><td><span class="tag st-resolved">resolved</span></td>
+<td class="mono">104.20.30.43</td><td>wayback</td><td>low</td><td>2021-10-10</td></tr>
+<tr><td class="mono">mail.vestige-demo.example</td><td><span class="tag st-resolved">resolved</span></td>
+<td class="mono">142.250.10.26</td><td>crt.sh</td><td>medium</td><td>2026-03-01T00:00:00</td></tr>
+<tr><td class="mono">vpn.vestige-demo.example</td><td><span class="tag st-resolved">resolved</span></td>
+<td class="mono">104.20.30.42</td><td>hackertarget</td><td>medium</td><td></td></tr>
+<tr><td class="mono">www.vestige-demo.example</td><td><span class="tag st-resolved">resolved</span></td>
+<td class="mono">104.20.30.40</td><td>crt.sh, hackertarget, urlscan</td><td>high</td><td>2026-06-01T00:00:00</td></tr>
+<tr><td class="mono">dev.vestige-demo.example</td><td><span class="tag st-unverified">unverified</span></td>
+<td class="mono"></td><td>crt.sh</td><td>low</td><td>2025-02-11T00:00:00</td></tr>
+<tr><td class="mono">old-shop.vestige-demo.example</td><td><span class="tag st-no_dns_answer">no_dns_answer</span></td>
+<td class="mono"></td><td>wayback</td><td>low</td><td>2019-03-01</td></tr>
+<tr><td class="mono">staging.vestige-demo.example</td><td><span class="tag st-no_dns_answer">no_dns_answer</span></td>
+<td class="mono"></td><td>crt.sh</td><td>medium</td><td>2025-02-11T00:00:00</td></tr>
+</table></div>
+
+<h2>Certificate Transparency (latest 3)</h2>
+<div class="table-wrap"><table><tr><th>ID</th><th>Issuer</th><th>Valid from</th><th>Valid to</th><th>Names</th></tr>
+<tr><td class="mono">crt.sh:9001</td><td>C=US, O=Demo CA, CN=Demo CA R1</td><td>2026-06-01T00:00:00</td><td>2026-12-01T00:00:00</td><td class="mono">api.vestige-demo.example, vestige-demo.example, www.vestige-demo.example</td></tr><tr><td class="mono">crt.sh:9002</td><td>C=US, O=Demo CA, CN=Demo CA R1</td><td>2025-02-11T00:00:00</td><td>2025-05-12T00:00:00</td><td class="mono">dev.vestige-demo.example, staging.vestige-demo.example</td></tr><tr><td class="mono">crt.sh:9003</td><td>C=US, O=Demo CA, CN=Demo CA R1</td><td>2026-03-01T00:00:00</td><td>2026-09-27T00:00:00</td><td class="mono">mail.vestige-demo.example</td></tr></table></div>
+<p class="muted">CT proves certificates were issued for these names; it does not show the hosts are live or who operates them.</p>
+
+<h2>Mail infrastructure &amp; email authentication</h2>
+<div class="table-wrap"><table><tr><th>Check</th><th>Result</th><th>Details</th></tr>
+<tr><td>mx</td><td class="mono">mx1.vestige-demo.example</td><td><code>priority</code>: 10<br>
+<code>domain</code>: vestige-demo.example<br>
+<code>source_refs</code>: <span class="mono">["mx"]</span><br>
+</td></tr><tr><td>mx</td><td class="mono">mx2.vestige-demo.example</td><td><code>priority</code>: 20<br>
+<code>domain</code>: vestige-demo.example<br>
+<code>source_refs</code>: <span class="mono">["mx"]</span><br>
+</td></tr><tr><td>spf</td><td class="mono">v=spf1 include:_spf.google.com include:sendgrid.net ~all</td><td><code>valid</code>: True<br>
+<code>includes</code>: <span class="mono">["_spf.google.com", "sendgrid.net"]</span><br>
+<code>all</code>: ~<br>
+<code>policy</code>: soft fail (unauthorised senders are marked)<br>
+<code>dns_lookup_terms</code>: 2<br>
+<code>source_refs</code>: <span class="mono">["spf"]</span><br>
+</td></tr><tr><td>dmarc</td><td class="mono">v=DMARC1; p=none; rua=mailto:dmarc-reports@vestige-demo.example</td><td><code>valid</code>: True<br>
+<code>found_at</code>: _dmarc.vestige-demo.example<br>
+<code>inherited</code>: False<br>
+<code>policy</code>: none<br>
+<code>pct</code>: 100<br>
+<code>rua</code>: <span class="mono">["mailto:dmarc-reports@vestige-demo.example"]</span><br>
+<code>adkim</code>: r<br>
+<code>aspf</code>: r<br>
+<code>interpretation</code>: monitoring only: no enforcement<br>
+<code>source_refs</code>: <span class="mono">["dmarc"]</span><br>
+</td></tr><tr><td>mta_sts</td><td class="mono">missing</td><td><code>source_refs</code>: <span class="mono">["mta-sts"]</span><br>
+</td></tr><tr><td>tls_rpt</td><td class="mono">missing</td><td><code>source_refs</code>: <span class="mono">["tls-rpt"]</span><br>
+</td></tr><tr><td>dkim</td><td class="mono">selector1: not found</td><td><code>selector</code>: selector1<br>
+<code>note</code>: selector not found; this does not prove DKIM is unused (other selectors may exist)<br>
+<code>source_refs</code>: <span class="mono">["dkim:selector1"]</span><br>
+</td></tr><tr><td>disposable_domain</td><td class="mono">no</td><td><code>disposable</code>: False<br>
+<code>list_size</code>: 175<br>
+<code>list_provenance</code>: disposable-email-domains (GitHub, maintained list)<br>
+<code>source_refs</code>: <span class="mono">["disposable-list"]</span><br>
+</td></tr></table></div>
+
+<h2>IP &amp; infrastructure</h2>
+<div class="table-wrap"><table><tr><th>Kind</th><th>Subject</th><th>Source</th><th>Details</th></tr>
+<tr><td>asn</td><td class="mono">AS13335</td><td>team-cymru-dns<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>asn</code>: 13335<br>
+<code>prefix</code>: 104.20.0.0/20<br>
+<code>country</code>: US<br>
+<code>registry</code>: arin<br>
+<code>allocated</code>: 2010-07-14<br>
+<code>as_name</code>: CLOUDFLARENET, US<br>
+<code>source_refs</code>: <span class="mono">["asn (team-cymru)"]</span><br>
+</td></tr><tr><td>asn</td><td class="mono">AS15169</td><td>team-cymru-dns<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>asn</code>: 15169<br>
+<code>prefix</code>: 142.250.0.0/16<br>
+<code>country</code>: US<br>
+<code>registry</code>: arin<br>
+<code>allocated</code>: 2000-03-30<br>
+<code>as_name</code>: GOOGLE, US<br>
+<code>source_refs</code>: <span class="mono">["asn (team-cymru)"]</span><br>
+</td></tr><tr><td>geolocation</td><td class="mono">104.20.30.40</td><td>ipapi.co<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>country</code>: United States<br>
+<code>country_code</code>: US<br>
+<code>region</code>: California<br>
+<code>city</code>: San Francisco<br>
+<code>timezone</code>: America/Los_Angeles<br>
+<code>org</code>: CLOUDFLARENET<br>
+<code>asn</code>: AS13335<br>
+<code>latitude</code>: 37.77<br>
+<code>longitude</code>: -122.41<br>
+<code>accuracy_note</code>: IP geolocation is approximate (often city/region level or ISP hub); it does not locate a person<br>
+<code>source_refs</code>: <span class="mono">["geolocation (ipapi.co)"]</span><br>
+</td></tr><tr><td>exposure_metadata</td><td class="mono">104.20.30.40</td><td>shodan-internetdb<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>ports</code>: <span class="mono">[80, 443]</span><br>
+<code>tags</code>: <span class="mono">["cdn"]</span><br>
+<code>vulns</code>: <span class="mono">["CVE-2021-41773"]</span><br>
+<code>note</code>: passive Shodan crawler data; may be stale; vulnerability IDs are inferred from banners and unverified<br>
+<code>source_refs</code>: <span class="mono">["exposure (shodan-internetdb)"]</span><br>
+</td></tr><tr><td>reputation</td><td class="mono">abuseipdb:104.20.30.40</td><td>abuseipdb<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>abuse_confidence_score</code>: 32<br>
+<code>total_reports</code>: 7<br>
+<code>distinct_reporters</code>: 3<br>
+<code>last_reported_at</code>: 2026-09-20T12:00:00+00:00<br>
+<code>is_whitelisted</code>: False<br>
+<code>usage_type</code>: Content Delivery Network<br>
+<code>isp</code>: Demo CDN<br>
+<code>country_code</code>: US<br>
+<code>window_days</code>: 90<br>
+<code>note</code>: community-reported abuse confidence; not proof of malicious activity<br>
+<code>source_refs</code>: <span class="mono">["abuseipdb (apex IPs)"]</span><br>
+</td></tr><tr><td>reputation</td><td class="mono">abuseipdb:104.20.30.41</td><td>abuseipdb<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>abuse_confidence_score</code>: 32<br>
+<code>total_reports</code>: 7<br>
+<code>distinct_reporters</code>: 3<br>
+<code>last_reported_at</code>: 2026-09-20T12:00:00+00:00<br>
+<code>is_whitelisted</code>: False<br>
+<code>usage_type</code>: Content Delivery Network<br>
+<code>isp</code>: Demo CDN<br>
+<code>country_code</code>: US<br>
+<code>window_days</code>: 90<br>
+<code>note</code>: community-reported abuse confidence; not proof of malicious activity<br>
+<code>source_refs</code>: <span class="mono">["abuseipdb (apex IPs)"]</span><br>
+</td></tr><tr><td>reputation</td><td class="mono">abuseipdb:2606:4700:20::6814:1e28</td><td>abuseipdb<br><span class="muted">2026-10-20T20:42:11Z</span></td><td><code>abuse_confidence_score</code>: 32<br>
+<code>total_reports</code>: 7<br>
+<code>distinct_reporters</code>: 3<br>
+<code>last_reported_at</code>: 2026-09-20T12:00:00+00:00<br>
+<code>is_whitelisted</code>: False<br>
+<code>usage_type</code>: Content Delivery Network<br>
+<code>isp</code>: Demo CDN<br>
+<code>country_code</code>: US<br>
+<code>window_days</code>: 90<br>
+<code>note</code>: community-reported abuse confidence; not proof of malicious activity<br>
+<code>source_refs</code>: <span class="mono">["abuseipdb (apex IPs)"]</span><br>
+</td></tr></table></div>
+
+<h2>Web &amp; TLS (direct, authorised checks)</h2>
+<div class="table-wrap"><table><tr><th>Check</th><th>Subject</th><th>Details</th></tr>
+<tr><td>http_response</td><td class="mono">vestige-demo.example</td><td><code>host</code>: vestige-demo.example<br>
+<code>final_url</code>: https://vestige-demo.example/<br>
+<code>status</code>: 200<br>
+<code>redirect_chain</code>: <span class="mono">[{"status": 200, "url": "https://vestige-demo.example/"}]</span><br>
+<code>technology_headers</code>: <span class="mono">{"server": "nginx/1.18.0"}</span><br>
+<code>headers</code>: <span class="mono">{"_is_https": true, "content-security-policy": null, "permissions-policy": null, "referrer-policy": null, "strict-transport-security": null, "x-content-type-options": "nosniff", "x-frame-options": null}</span><br>
+<code>source_refs</code>: <span class="mono">["http-response"]</span><br>
+</td></tr><tr><td>tls_certificate</td><td class="mono">vestige-demo.example</td><td><code>host</code>: vestige-demo.example<br>
+<code>verified</code>: True<br>
+<code>hostname_valid</code>: True<br>
+<code>protocol</code>: TLSv1.3<br>
+<code>issuer_org</code>: Demo CA (fixture)<br>
+<code>issuer_cn</code>: Demo CA R1<br>
+<code>subject_cn</code>: vestige-demo.example<br>
+<code>san</code>: <span class="mono">["vestige-demo.example", "www.vestige-demo.example"]</span><br>
+<code>not_before</code>: 2026-09-01T00:00:00+00:00<br>
+<code>not_after</code>: 2026-10-13T00:00:00+00:00<br>
+<code>days_until_expiry</code>: 12<br>
+<code>source_refs</code>: <span class="mono">["tls-certificate"]</span><br>
+</td></tr><tr><td>security_txt</td><td class="mono">absent</td><td><code>present</code>: False<br>
+<code>checked</code>: <span class="mono">["/.well-known/security.txt", "/security.txt"]</span><br>
+<code>source_refs</code>: <span class="mono">["security.txt"]</span><br>
+</td></tr><tr><td>robots_txt</td><td class="mono">vestige-demo.example</td><td><code>present</code>: True<br>
+<code>disallow_rules</code>: 2<br>
+<code>allow_rules</code>: 0<br>
+<code>sitemaps</code>: <span class="mono">["https://vestige-demo.example/sitemap.xml"]</span><br>
+<code>user_agent_groups</code>: 1<br>
+<code>source_refs</code>: <span class="mono">["robots.txt/sitemap"]</span><br>
+</td></tr><tr><td>sitemap</td><td class="mono">https://vestige-demo.example/sitemap.xml</td><td><code>present</code>: True<br>
+<code>url_count</code>: 1<br>
+<code>is_index</code>: False<br>
+<code>lastmod_min</code>: 2026-09-01<br>
+<code>lastmod_max</code>: 2026-09-01<br>
+<code>source_refs</code>: <span class="mono">["robots.txt/sitemap"]</span><br>
+</td></tr></table></div>
+
+<h2>Historical URLs (4)</h2>
+<p class="muted">Archive observations describe the past. Sensitive query values are redacted.</p>
+<div class="table-wrap"><table><tr><th>URL</th><th>First seen</th><th>Last seen</th><th>Source</th></tr>
+<tr><td class="mono">http://old-shop.vestige-demo.example/cart?item=4&amp;session=[REDACTED]</td><td>2019-03-01</td><td>2019-03-01</td><td>wayback</td></tr><tr><td class="mono">https://blog.vestige-demo.example/2021/hello-world</td><td>2021-10-10</td><td>2021-10-10</td><td>wayback</td></tr><tr><td class="mono">https://vestige-demo.example/about</td><td>2020-06-15</td><td>2020-06-15</td><td>wayback</td></tr><tr><td class="mono">https://www.vestige-demo.example/?token=[REDACTED]</td><td>2026-08-14</td><td>2026-08-14</td><td>urlscan</td></tr></table></div>
+
+
+
+<h2>Correlated relationships (37)</h2>
+<p class="muted">Relationships record what was observed, with source and confidence. Shared hosting, certificates or nameservers do <strong>not</strong> imply common ownership.</p>
+<div class="table-wrap"><table><tr><th>Subject</th><th>Relationship</th><th>Object</th><th>Source</th><th>Confidence</th></tr>
+<tr><td class="mono">104.20.30.40</td><td>announced_by</td><td class="mono">AS13335</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">104.20.30.40</td><td>has_reputation_observation</td><td class="mono">abuseipdb</td><td>abuseipdb</td><td>medium</td></tr><tr><td class="mono">104.20.30.41</td><td>announced_by</td><td class="mono">AS13335</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">104.20.30.41</td><td>has_reputation_observation</td><td class="mono">abuseipdb</td><td>abuseipdb</td><td>medium</td></tr><tr><td class="mono">104.20.30.42</td><td>announced_by</td><td class="mono">AS13335</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">104.20.30.43</td><td>announced_by</td><td class="mono">AS13335</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">142.250.10.26</td><td>announced_by</td><td class="mono">AS15169</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">142.250.10.27</td><td>announced_by</td><td class="mono">AS15169</td><td>team-cymru-dns</td><td>high</td></tr><tr><td class="mono">2606:4700:20::6814:1e28</td><td>has_reputation_observation</td><td class="mono">abuseipdb</td><td>abuseipdb</td><td>medium</td></tr><tr><td class="mono">api.vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9001</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">api.vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.41</td><td>dns</td><td>high</td></tr><tr><td class="mono">blog.vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.43</td><td>dns</td><td>high</td></tr><tr><td class="mono">dev.vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9002</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">mail.vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9003</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">mail.vestige-demo.example</td><td>resolves_to</td><td class="mono">142.250.10.26</td><td>dns</td><td>high</td></tr><tr><td class="mono">mx1.vestige-demo.example</td><td>resolves_to</td><td class="mono">142.250.10.26</td><td>dns</td><td>high</td></tr><tr><td class="mono">mx2.vestige-demo.example</td><td>resolves_to</td><td class="mono">142.250.10.27</td><td>dns</td><td>high</td></tr><tr><td class="mono">staging.vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9002</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9001</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_nameserver</td><td class="mono">ada.ns.cloudflare.com</td><td>dns, rdap</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_nameserver</td><td class="mono">bob.ns.cloudflare.com</td><td>dns, rdap</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">api.vestige-demo.example</td><td>crt.sh, hackertarget</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">blog.vestige-demo.example</td><td>wayback</td><td>low</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">dev.vestige-demo.example</td><td>crt.sh</td><td>low</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">mail.vestige-demo.example</td><td>crt.sh</td><td>medium</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">old-shop.vestige-demo.example</td><td>wayback</td><td>low</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">staging.vestige-demo.example</td><td>crt.sh</td><td>medium</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">vpn.vestige-demo.example</td><td>hackertarget</td><td>medium</td></tr><tr><td class="mono">vestige-demo.example</td><td>has_subdomain</td><td class="mono">www.vestige-demo.example</td><td>crt.sh, hackertarget, urlscan</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.40</td><td>dns</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.41</td><td>dns</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>resolves_to</td><td class="mono">2606:4700:20::6814:1e28</td><td>dns</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>uses_mail_exchanger</td><td class="mono">mx1.vestige-demo.example</td><td>dns</td><td>high</td></tr><tr><td class="mono">vestige-demo.example</td><td>uses_mail_exchanger</td><td class="mono">mx2.vestige-demo.example</td><td>dns</td><td>high</td></tr><tr><td class="mono">vpn.vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.42</td><td>dns</td><td>high</td></tr><tr><td class="mono">www.vestige-demo.example</td><td>covered_by_certificate</td><td class="mono">crt.sh:9001</td><td>crt.sh</td><td>high</td></tr><tr><td class="mono">www.vestige-demo.example</td><td>resolves_to</td><td class="mono">104.20.30.40</td><td>dns</td><td>high</td></tr></table></div>
+
+<h2>Limitations &amp; unavailable data</h2>
+<ul class="limits"><li>FIXTURE DATA: produced from canned responses by `vestige demo`; no network requests were made.</li><li>Direct checks inspected only the root host over HTTPS. Missing headers are configuration observations, not exploitable vulnerabilities. A DNS-rebinding race between the public-address check and the request is possible in principle (see docs/SECURITY.md).</li><li>Passive subdomain sources are incomplete by nature; absence of a name is not evidence it does not exist.</li><li>Subdomain states: &#39;resolved&#39; = DNS returned an address at test time; &#39;no_dns_answer&#39; = no A/AAAA answer; &#39;wildcard_only&#39; = answer matches a wildcard record; &#39;unverified&#39; = not tested or lookup error.</li><li>Third-party reputation and exposure data are other parties&#39; observations, not VESTIGE verdicts.</li><li><strong>virustotal (domain)</strong> (SKIPPED): VIRUSTOTAL_KEY not set; see docs/API_SETUP.md</li><li><strong>alienvault-otx</strong> (SKIPPED): OTX_API_KEY not set; see docs/API_SETUP.md</li><li><strong>virustotal</strong> (SKIPPED): VIRUSTOTAL_KEY not set; see docs/API_SETUP.md</li></ul>
+
+<footer>Generated by VESTIGE &middot; schema 1.0 &middot; tool version 1.0.0. For authorised security assessment and education only.</footer>
+</main>
+</body>
+</html>

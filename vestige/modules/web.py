@@ -154,7 +154,11 @@ def parse_sitemap(text: str) -> dict:
 
 def fetch_tls(host: str, port: int = 443, timeout: float = 8.0, ip: str | None = None) -> dict:
     """TLS handshake with full verification (chain + hostname). Never disables verification."""
-    ctx_ssl = ssl.create_default_context()
+    try:  # certifi (a dependency of requests) gives the same trust anchors on every platform
+        import certifi
+        ctx_ssl = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        ctx_ssl = ssl.create_default_context()
     info: dict = {"host": host, "verified": False}
     try:
         with socket.create_connection((ip or host, port), timeout=timeout) as sock:

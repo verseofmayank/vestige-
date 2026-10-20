@@ -247,7 +247,8 @@ def rule_web(inv, domain, now):
         if d.get("error"):
             sev = Severity.MEDIUM
             out.append(_f("VST-TLS-002", "TLS certificate failed verification", sev, t.value, d["error"], "direct-tls", H,
-                          "Clients that validate certificates will reject the connection or show warnings. Causes include expiry, hostname mismatch, or an untrusted chain.",
+                          "Clients that validate certificates will reject the connection or show warnings. Causes include expiry, hostname mismatch, an untrusted or incomplete chain "
+                          "(a missing intermediate is a server fault), or a gap in the scanning machine's own CA bundle; confirm with a second tool.",
                           "Install a valid certificate chain that covers the hostname.", "RFC 5280 / RFC 6125", t.observed_at))
         elif d.get("days_until_expiry") is not None:
             days = d["days_until_expiry"]

@@ -30,6 +30,13 @@ DEFAULT_MAX_BYTES = 5 * 1024 * 1024
 MAX_RETRY_WAIT = 30.0
 
 
+# Conservative per-run request budgets per source (protect free tiers; override via HttpClient(quotas=...)).
+DEFAULT_QUOTAS = {
+    "crt.sh": 6, "hackertarget": 3, "otx": 5, "virustotal": 25, "abuseipdb": 25, "ipapi": 30, "shodan-internetdb": 30,
+    "urlscan": 5, "wayback": 4, "numverify": 3, "rdap": 6, "iana-rdap-bootstrap": 3, "target-http": 40, "mta-sts-policy": 3,
+}
+
+
 class ProviderError(Exception):
     """A source could not deliver trustworthy data.
 

@@ -100,7 +100,7 @@ All tests are offline (mocked HTTP and DNS). Recorded output and what each test 
 
 ## Documentation
 
-[ARCHITECTURE](docs/ARCHITECTURE.md) · [MODULES](docs/MODULES.md) · [API_SETUP](docs/API_SETUP.md) · [SECURITY](docs/SECURITY.md) · [TESTING](docs/TESTING.md) · [INTERVIEW_PREP](docs/INTERVIEW_PREP.md) · [AUDIT](docs/AUDIT.md) · [PROGRESS](PROGRESS.md)
+[ARCHITECTURE](docs/ARCHITECTURE.md) · [MODULES](docs/MODULES.md) · [API_SETUP](docs/API_SETUP.md) · [SECURITY](docs/SECURITY.md) · [TESTING](docs/TESTING.md) · [AUDIT](docs/AUDIT.md) · [PROGRESS](PROGRESS.md)
 
 ## Known limitations
 

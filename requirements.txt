@@ -1,4 +1,9 @@
-click==8.1.7
-rich==13.7.0
-requests==2.31.0
-python-dotenv==1.0.0
+# Runtime dependencies (minimum versions; see docs/ARCHITECTURE.md for why each exists)
+click>=8.1            # CLI framework
+rich>=13.7            # terminal tables / progress
+requests>=2.31        # HTTP client (wrapped by vestige.core.http_client)
+dnspython>=2.4        # DNS record queries
+phonenumbers>=8.13    # offline phone-number parsing and metadata
+Jinja2>=3.1           # HTML report templating with autoescaping
+idna>=3.4             # IDN / punycode normalisation
+python-dotenv>=1.0    # optional: load API keys from a local .env file

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<meta name="generator" content="VESTIGE">
+<title>VESTIGE report - {{ meta.target }}</title>
+<style>
+:root{--bg:#f6f8fa;--surface:#fff;--surface2:#eef1f5;--text:#1b2430;--muted:#5a6678;--line:#d6dce5;--accent:#0a7ea4;
+--high:#c62828;--medium:#d9730d;--low:#b58900;--info:#3b6fb6;--ok:#1b8a4b;--fail:#c62828;--skip:#6b7280;--empty:#6b7280}
+@media (prefers-color-scheme:dark){:root{--bg:#0e131a;--surface:#161d27;--surface2:#1d2633;--text:#e4e9f0;--muted:#97a3b4;--line:#2a3545;--accent:#4fc3e8;
+--high:#ff6b6b;--medium:#ffa14a;--low:#e6c15a;--info:#7fb0f0;--ok:#4cd081;--fail:#ff6b6b;--skip:#97a3b4;--empty:#97a3b4}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 48px}
+header{background:var(--surface);border-bottom:1px solid var(--line);padding:24px 0;margin-bottom:20px}
+header .brand{font-weight:700;letter-spacing:.2em;color:var(--accent);font-size:13px}
+h1{margin:6px 0 4px;font-size:26px;word-break:break-all}
+h2{font-size:18px;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:18px 0 6px}
+.muted{color:var(--muted)}
+.banner{border:2px dashed var(--medium);background:var(--surface);padding:12px 16px;border-radius:8px;margin:0 0 18px;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.card b{display:block;font-size:24px;line-height:1.2}
+.card span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.sev-high,.st-FAILED,.st-BLOCKED,.st-ERROR{color:var(--high)}.sev-medium{color:var(--medium)}.sev-low{color:var(--low)}.sev-info{color:var(--info)}
+.st-OK,.st-FOUND,.st-resolved{color:var(--ok)}.st-SKIPPED,.st-UNKNOWN,.st-EMPTY,.st-NOT_FOUND,.st-unverified,.st-no_dns_answer,.st-wildcard_only{color:var(--skip)}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface2);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.mono,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all}
+details.finding{background:var(--surface);border:1px solid var(--line);border-left:5px solid currentColor;border-radius:8px;margin:10px 0;padding:0}
+details.finding>summary{cursor:pointer;padding:10px 14px;font-weight:600;color:var(--text);list-style-position:inside}
+details.finding .body{padding:0 14px 12px;color:var(--text)}
+details.finding dl{display:grid;grid-template-columns:130px 1fr;gap:4px 12px;margin:8px 0}
+details.finding dt{color:var(--muted)}details.finding dd{margin:0;word-break:break-word}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px;color:var(--muted)}
+ul.limits{margin:6px 0;padding-left:20px}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:var(--surface2);padding:1px 5px;border-radius:4px}
+footer{margin-top:40px;color:var(--muted);font-size:12.5px}
+@media (max-width:560px){details.finding dl{grid-template-columns:1fr}h1{font-size:21px}}
+@media print{body{background:#fff;color:#000}details.finding{break-inside:avoid}}
+</style>
+</head>
+<body>
+{% macro tag(cls, text) %}<span class="tag {{ cls }}">{{ text }}</span>{% endmacro %}
+{% macro kv(data, skip) %}
+{% for k, v in data.items() if k not in skip and v not in (none, "", [], {}) %}
+<code>{{ k }}</code>: {% if v is mapping or (v is iterable and v is not string) %}<span class="mono">{{ v | tojson }}</span>{% else %}{{ v }}{% endif %}<br>
+{% endfor %}
+{% endmacro %}
+<header><div class="wrap">
+<div class="brand">VESTIGE &middot; mayhack</div>
+<h1>{{ meta.target }}</h1>
+<div class="muted">Command <code>{{ meta.command }}</code> &middot; started {{ meta.started_at }}{% if meta.finished_at %} &middot; finished {{ meta.finished_at }}{% endif %} &middot; scope: {{ meta.scope.mode if meta.scope.mode else "n/a" }}</div>
+</div></header>
+<main class="wrap">
+{% if meta.mode != "live" %}
+<div class="banner">FIXTURE DATA &mdash; this report was produced by the offline demonstration from canned responses. It is NOT the result of a live scan and must not be cited as one.</div>
+{% endif %}
+
+<div class="cards">
+  <div class="card"><b>{{ findings | length }}</b><span>findings</span></div>
+  {% for s in sev_order %}<div class="card"><b class="sev-{{ s }}">{{ summary.findings[s] }}</b><span>{{ s }}</span></div>{% endfor %}
+  <div class="card"><b class="st-OK">{{ summary.sources.OK }}</b><span>sources OK</span></div>
+  <div class="card"><b>{{ summary.sources.EMPTY }}</b><span>empty</span></div>
+  <div class="card"><b class="st-FAILED">{{ summary.sources.FAILED }}</b><span>failed</span></div>
+  <div class="card"><b class="st-SKIPPED">{{ summary.sources.SKIPPED }}</b><span>skipped</span></div>
+</div>
+
+<div class="note">Findings are <strong>observations with evidence</strong>, not confirmed vulnerabilities. Severity is conservative, and no aggregate risk score is computed. Third-party reputation data are other parties' opinions.</div>
+
+<h2>Findings</h2>
+{% if not findings %}<p class="muted">No findings were produced by the rules that could be evaluated with the data collected.</p>{% endif %}
+{% for f in findings %}
+<details class="finding sev-{{ f.severity }}" {% if f.severity in ("high", "medium") %}open{% endif %}>
+<summary>{{ tag("sev-" ~ f.severity, f.severity | upper) }} <span class="mono">{{ f.id }}</span> &nbsp;{{ f.title }}</summary>
+<div class="body"><dl>
+<dt>Target</dt><dd>{{ f.target }}</dd>
+<dt>Evidence</dt><dd class="mono">{{ f.evidence }}</dd>
+<dt>Why it matters</dt><dd>{{ f.explanation }}</dd>
+<dt>Recommended next step</dt><dd>{{ f.recommendation }}</dd>
+<dt>Source / confidence</dt><dd>{{ f.source }} &middot; confidence: {{ f.confidence }} &middot; observed {{ f.observed_at }}</dd>
+{% if f.standard %}<dt>Reference</dt><dd>{{ f.standard }}</dd>{% endif %}
+<dt>Classification</dt><dd>{{ f.kind }} (not a confirmed vulnerability)</dd>
+</dl></div>
+</details>
+{% endfor %}
+
+<h2>What was checked (module &amp; source status)</h2>
+<div class="table-wrap"><table>
+<tr><th>Module</th><th>Source</th><th>Status</th><th>Items</th><th>Detail</th></tr>
+{% for s in sources %}
+<tr><td>{{ s.module }}</td><td>{{ s.source }}</td><td>{{ tag("st-" ~ s.status, s.status) }}</td><td>{{ s.items }}</td><td>{{ s.detail }}</td></tr>
+{% endfor %}
+</table></div>
+
+{% if registration or dns_records or dnssec %}
+<h2>Domain &amp; DNS</h2>
+{% for o in registration %}
+<h3>Registration ({{ o.data.via }})</h3>
+<div class="note">{{ kv(o.data, ["via","domain"]) }}<span class="muted">Source: {{ o.source }} &middot; confidence {{ o.confidence }}</span></div>
+{% endfor %}
+{% if dns_records %}
+<h3>DNS records</h3>
+<div class="table-wrap"><table><tr><th>Type</th><th>Value</th><th>Source</th></tr>
+{% for o in dns_records %}<tr><td>{{ o.data.type }}</td><td class="mono">{{ o.data.value }}</td><td>{{ o.source }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+{% for o in dnssec + wildcard + dns_provider %}
+<p><strong>{{ o.kind }}:</strong> {{ o.value }} <span class="muted">({{ o.source }}, confidence {{ o.confidence }}){% if o.data.note %} &mdash; {{ o.data.note }}{% endif %}</span></p>
+{% endfor %}
+{% endif %}
+
+{% if subdomains %}
+<h2>Subdomains ({{ subdomains | length }})</h2>
+<p class="muted">"Discovered" names come from passive sources. Only <em>resolved</em> was confirmed by a DNS lookup; this does not prove the host serves anything.</p>
+<div class="table-wrap"><table>
+<tr><th>Name</th><th>DNS state</th><th>Addresses</th><th>Sources</th><th>Confidence</th><th>First seen</th></tr>
+{% for o in subdomains %}
+<tr><td class="mono">{{ o.value }}</td><td>{{ tag("st-" ~ (o.data.dns_state or "unverified"), o.data.dns_state or "unverified") }}</td>
+<td class="mono">{{ o.data.resolved_ips | pretty }}</td><td>{{ o.data.sources | pretty }}</td><td>{{ o.confidence }}</td><td>{{ o.data.first_seen or "" }}</td></tr>
+{% endfor %}
+</table></div>
+{% endif %}
+
+{% if certificates %}
+<h2>Certificate Transparency (latest {{ certificates | length }})</h2>
+<div class="table-wrap"><table><tr><th>ID</th><th>Issuer</th><th>Valid from</th><th>Valid to</th><th>Names</th></tr>
+{% for o in certificates %}<tr><td class="mono">{{ o.value }}</td><td>{{ o.data.issuer }}</td><td>{{ o.data.not_before }}</td><td>{{ o.data.not_after }}</td><td class="mono">{{ o.data.names[:6] | pretty }}{% if o.data.names | length > 6 %} +{{ o.data.names | length - 6 }}{% endif %}</td></tr>{% endfor %}
+</table></div>
+<p class="muted">CT proves certificates were issued for these names; it does not show the hosts are live or who operates them.</p>
+{% endif %}
+
+{% if mail %}
+<h2>Mail infrastructure &amp; email authentication</h2>
+<div class="table-wrap"><table><tr><th>Check</th><th>Result</th><th>Details</th></tr>
+{% for o in mail %}<tr><td>{{ o.kind }}</td><td class="mono">{{ o.value }}</td><td>{{ kv(o.data, ["sources","tags","mechanisms","present"]) }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if ips %}
+<h2>IP &amp; infrastructure</h2>
+<div class="table-wrap"><table><tr><th>Kind</th><th>Subject</th><th>Source</th><th>Details</th></tr>
+{% for o in ips %}<tr><td>{{ o.kind }}</td><td class="mono">{{ o.value }}</td><td>{{ o.source }}<br><span class="muted">{{ o.observed_at }}</span></td><td>{{ kv(o.data, ["sources","ip","subject"]) }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if web %}
+<h2>Web &amp; TLS (direct, authorised checks)</h2>
+<div class="table-wrap"><table><tr><th>Check</th><th>Subject</th><th>Details</th></tr>
+{% for o in web %}<tr><td>{{ o.kind }}</td><td class="mono">{{ o.value }}</td><td>{{ kv(o.data, ["sources"]) }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if history %}
+<h2>Historical URLs ({{ history_total }}{% if history_total > history | length %}, showing {{ history | length }}{% endif %})</h2>
+<p class="muted">Archive observations describe the past. Sensitive query values are redacted.</p>
+<div class="table-wrap"><table><tr><th>URL</th><th>First seen</th><th>Last seen</th><th>Source</th></tr>
+{% for o in history %}<tr><td class="mono">{{ o.value }}</td><td>{{ o.data.first_seen or "" }}</td><td>{{ o.data.last_seen or "" }}</td><td>{{ o.source }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if usernames %}
+<h2>Username results</h2>
+<p class="muted">FOUND = the platform's API echoed the exact username. UNKNOWN/BLOCKED = could not be verified (not "not found").</p>
+<div class="table-wrap"><table><tr><th>Platform</th><th>Status</th><th>Confidence</th><th>Explanation</th><th>Evidence</th></tr>
+{% for o in usernames %}<tr><td>{{ o.value }}</td><td>{{ tag("st-" ~ o.data.status, o.data.status) }}</td><td>{{ o.confidence }}</td><td>{{ o.data.detail }}</td>
+<td class="mono">{% if o.data.status == "FOUND" %}{{ o.data.profile_url }}{% endif %}{% if o.data.evidence %}<br>{{ o.data.evidence | tojson }}{% endif %}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if phone %}
+<h2>Phone number metadata</h2>
+<div class="table-wrap"><table>
+{% for o in phone %}<tr><td>{{ o.kind }}</td><td>{{ kv(o.data, ["sources"]) }}</td></tr>{% endfor %}
+</table></div>
+{% endif %}
+
+{% if relationships %}
+<h2>Correlated relationships ({{ relationships | length }})</h2>
+<p class="muted">Relationships record what was observed, with source and confidence. Shared hosting, certificates or nameservers do <strong>not</strong> imply common ownership.</p>
+<div class="table-wrap"><table><tr><th>Subject</th><th>Relationship</th><th>Object</th><th>Source</th><th>Confidence</th></tr>
+{% for r in relationships[:300] %}<tr><td class="mono">{{ r.subject }}</td><td>{{ r.predicate }}</td><td class="mono">{{ r.object }}</td><td>{{ r.source }}</td><td>{{ r.confidence }}</td></tr>{% endfor %}
+</table></div>
+{% if relationships | length > 300 %}<p class="muted">{{ relationships | length - 300 }} more relationships are in the JSON export.</p>{% endif %}
+{% endif %}
+
+<h2>Limitations &amp; unavailable data</h2>
+<ul class="limits">{% for l in limitations %}<li>{{ l }}</li>{% endfor %}
+{% for s in sources if s.status in ("FAILED", "SKIPPED") %}<li><strong>{{ s.source }}</strong> ({{ s.status }}): {{ s.detail }}</li>{% endfor %}
+</ul>
+
+<footer>Generated by VESTIGE &middot; schema {{ d.schema_version }} &middot; tool version {{ d.tool.version }}. For authorised security assessment and education only.</footer>
+</main>
+</body>
+</html>

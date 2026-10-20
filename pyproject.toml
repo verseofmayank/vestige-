@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vestige-osint"
+version = "1.0.0"
+description = "VESTIGE: OSINT and external attack surface intelligence CLI (by mayhack)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+  "click>=8.1", "rich>=13.7", "requests>=2.31", "dnspython>=2.4",
+  "phonenumbers>=8.13", "Jinja2>=3.1", "idna>=3.4", "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+vestige = "vestige.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vestige*"]
+
+[tool.setuptools.package-data]
+vestige = ["data/*.json", "data/*.txt", "reporting/*.j2"]

@@ -1,0 +1,21 @@
+{
+  "ns.cloudflare.com": "Cloudflare",
+  "awsdns": "Amazon Route 53",
+  "googledomains.com": "Google Domains / Cloud DNS",
+  "ns-cloud": "Google Cloud DNS",
+  "azure-dns": "Microsoft Azure DNS",
+  "domaincontrol.com": "GoDaddy",
+  "registrar-servers.com": "Namecheap",
+  "nsone.net": "NS1",
+  "ultradns": "UltraDNS (Vercara)",
+  "dnsmadeeasy.com": "DNS Made Easy",
+  "akam.net": "Akamai",
+  "akamaiedge.net": "Akamai",
+  "dynect.net": "Oracle Dyn",
+  "digitalocean.com": "DigitalOcean",
+  "gandi.net": "Gandi",
+  "hover.com": "Hover",
+  "wixdns.net": "Wix",
+  "squarespacedns.com": "Squarespace",
+  "iana-servers.net": "IANA (example/reserved domains)"
+}
